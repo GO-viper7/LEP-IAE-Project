@@ -1,0 +1,636 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tapestry&display=swap");
+
+:root {
+  --success: rgb(88, 243, 85);
+  --filled-bg: rgba(255, 96, 96, 0.929);
+  --filled-border: rgba(255, 35, 35, 0.929);
+}
+
+#navbar {
+  position: fixed;
+  width: 100vw;
+  height: 5.5vw;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 0) !important;
+  border-bottom: 1px solid white;
+}
+
+.navmenu {
+  z-index: 5;
+  float: right;
+  height: 100%;
+  width: 60%;
+  position: absolute;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5vw;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  z-index: 1000;
+}
+
+.navlinks {
+  text-decoration: none;
+  color: var(--textcolor1);
+  font-family: monospace;
+  font-size: 2vw;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#brand {
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+  text-decoration: none;
+  position: absolute;
+  left: 10vw;
+  list-style: none;
+  font-family: "Monoton", cursive;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 4vw;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+#brand a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#brand a:hover {
+  /* text-shadow: 0 0 35px rgb(109, 255, 197); */
+  color: #00c8ff;
+}
+
+/* #logo1{
+      width: 250px;
+      height: 120px;
+  } */
+
+.navitem {
+  list-style: none;
+  z-index: 10;
+}
+
+.navlinks::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 2.5px;
+  width: 0px;
+  left: 0%;
+  background-color: rgb(255, 255, 255);
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.navlinks::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  height: 2.5px;
+  width: 0px;
+  right: 0%;
+  background-color: whitesmoke;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.navlinks:hover:after {
+  /* text-decoration: underline; */
+  width: 100%;
+}
+.navlinks:hover:before {
+  /* text-decoration: underline; */
+  width: 100%;
+}
+#content {
+  width: 102%;
+  height: fit-content;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2px;
+  z-index: 10;
+}
+
+#searchImgBoxHead {
+  position: absolute;
+  top: 12vw;
+  color: white;
+  width: 102vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  letter-spacing: 3px;
+  /* text-align: center; */
+}
+#searchImgBoxHead h1 {
+  font-size: 2.5vw;
+  font-family: "Bungee Inline", cursive;
+  font-weight: 100;
+}
+
+#searchImgBoxHead h2 {
+  font-size: 2vw;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 3px;
+}
+
+#searchResults {
+  width: 100vw;
+  /* min-height: 100vh; */
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* background-color: #dfeaff; */
+  margin-top: 4px;
+  margin-left: 3px;
+}
+
+#searchResults h3 {
+  font-size: 2.5vw;
+  margin: 20px 50px;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 5px;
+  word-spacing: 10px;
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+  z-index: 100;
+  cursor: pointer;
+}
+#searchResults h3::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  height: 5px;
+  width: 0px;
+  right: 0%;
+  background-color: rgb(0, 0, 0);
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  z-index: 10;
+}
+#searchResults h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  height: 5px;
+  width: 0px;
+  left: 0%;
+  background-color: rgb(0, 0, 0);
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+#searchResults h3:hover:after {
+  /* text-decoration: underline; */
+  width: 100%;
+}
+#searchResults h3:hover:before {
+  /* text-decoration: underline; */
+  width: 100%;
+}
+
+#resultCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 30vw));
+  grid-template-rows: repeat(autofit, minmax(250px, 450px));
+  justify-content: center;
+  height: fit-content;
+  gap: 2px;
+  min-height: 100vh;
+}
+.resultCard {
+  height: 27vw;
+  width: 25vw;
+  min-height: 300px;
+  border-radius: 1vw;
+  background-color: #ffffff;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.userIntro {
+  width: 100%;
+
+  background-color: #000000;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+
+  padding: 5px 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.profileImg {
+  height: 87%;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.userNp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userName {
+  font-size: 1.5vw;
+  color: #ffffff;
+  font-family: "Days One", sans-serif;
+  letter-spacing: 3px;
+}
+.profession {
+  font-size: 1.2vw;
+  color: rgb(0, 255, 213);
+  font-family: "Permanent Marker", cursive;
+  letter-spacing: 2px;
+}
+.employeeDetails {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  gap: 25px;
+
+  padding: 15px;
+}
+
+.ques {
+  font-size: 1.5vw;
+
+  font-family: "Days One", sans-serif;
+}
+.ans {
+  font-size: 1.5vw;
+  font-family: "Permanent Marker", cursive;
+  color: #008aff;
+}
+.book {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgb(223, 223, 223);
+}
+.bookBtn {
+  padding: 10px 5px;
+  width: 25%;
+  height: fit-content;
+  min-height: 30%;
+  font-size: 100%;
+  border-radius: 8px;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  font-family: "Monoton", cursive;
+  font-weight: 100;
+  letter-spacing: 4px;
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: linear;
+  cursor: pointer;
+}
+.bookBtn:hover {
+  background-color: #0d84ec;
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(0, 149, 255);
+}
+
+#searchHead {
+  width: 100vw;
+  height: fit-content;
+  padding: 2vw;
+  border-top: 1px solid rgb(212, 212, 212);
+  border-bottom: 1px solid rgb(212, 212, 212);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5vw;
+  /* background-color: #dfeaff; */
+}
+
+.searchInput {
+  background-color: rgb(223, 223, 223);
+  border-radius: 0.5vw;
+  border: 1px solid rgb(0, 0, 0);
+  /* border: none; */
+  padding: 0 1vw;
+  height: 2.5vw;
+  width: 15vw;
+}
+
+.searchText {
+  font-size: 2vw;
+  font-family: "Tapestry", cursive;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+#searchBtn {
+  position: relative;
+  width: 7vw;
+  height: 2.5vw;
+  border-radius: 0.3vw;
+  border: none;
+  font-size: 1.2vw;
+  font-family: "Changa", sans-serif;
+  letter-spacing: 3px;
+  background-color: #2667ff;
+  color: whitesmoke;
+  /* background: linear-gradient(rgb(200, 104, 255), rgb(99, 185, 255)); */
+  /* background:linear-gradient(rgb(255, 17, 17),rgba(0, 229, 255, 1)); */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+#searchBtn:hover {
+  box-shadow: 0 0 6px black;
+}
+
+#searchImgBox {
+  position: absolute;
+  top: 0vw;
+  width: 100vw;
+  height: 22.5vw;
+  overflow: hidden;
+  background: url(./Images/searchBg.jpg);
+  background-size: cover;
+  background-blend-mode: screen;
+  display: flex;
+  align-items: center;
+}
+
+#contentContainer {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+
+  position: absolute;
+  top: 22.5vw;
+  width: 100vw;
+
+  margin-top: 5px;
+}
+
+#noDataImg {
+  width: 20vw;
+  height: 20vw;
+}
+
+#notFound {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  width: 100%;
+  height: fit-content;
+}
+
+#noDataHead {
+  font-size: 1.5vw !important;
+  font-family: "Changa", sans-serif !important;
+}
+
+/* for model */
+
+#modalContainer {
+  z-index: 9000;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modalContent {
+  z-index: 10000;
+  width: 50vw;
+  height: 90vh;
+  background-color: aliceblue;
+  border-radius: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+#slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: fit-content;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+}
+.slot,
+.slot-disabled,
+.selected-slot,
+.slot-filled {
+  font-size: 1.5vw;
+  border-radius: 5px;
+  border: 1px solid #0d84ec;
+  padding: 8px 12px;
+  background-color: rgb(255, 255, 255);
+  color: #0d84ec;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.1s;
+  --selected: 0;
+}
+.slot-disabled {
+  background-color: rgb(203, 203, 203);
+  border: 1.5px solid #a1a1a1;
+  pointer-events: none;
+  color: whitesmoke;
+}
+.slot-filled {
+  background-color: var(--filled-bg);
+  border: 1.5px solid var(--filled-border);
+  pointer-events: none;
+  color: whitesmoke;
+}
+.slot:hover {
+  background-color: rgb(73, 167, 255);
+  color: #ffffff;
+}
+
+.selected-slot,
+.selected-slot:hover {
+  background-color: var(--success);
+  color: whitesmoke;
+  border: 1.5px solid rgb(5, 149, 0);
+}
+
+#closeModalBtn {
+  /* font-size: 4vw; */
+  font-weight: 500;
+  position: absolute;
+  top: 8.3vh;
+  right: 27vw;
+  cursor: pointer;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-duration: 0.2s;
+  width: 3vmax;
+  height: 3vmax;
+  font-size: 3vmax;
+  /* padding: 0.5vmax; */
+  border-radius: 50%;
+  padding-bottom: 0.6vmax;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#closeModalBtn:hover {
+  border: 1px solid black;
+  animation-name: rotate;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  background-color: rgb(220, 220, 220);
+}
+
+#modalBtns {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  gap: 2vmax;
+  justify-content: center;
+}
+
+/* @keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+} */
+
+#dateDisplay {
+  z-index: 10000;
+  width: fit-content;
+  height: fit-content;
+}
+
+#hireBtn {
+  padding: 6px 12px;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1.5vw;
+  border-radius: 5px;
+  font-family: "Days One", sans-serif;
+  font-weight: 100;
+  letter-spacing: 4px;
+  border: none;
+  background-color: #0d84ec;
+  color: whitesmoke;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+#hireBtn:hover {
+  box-shadow: 0 0 10px #008aff;
+}
+
+.cardDetailBox{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5%;
+  gap: 4%;
+  font-size: max(15px,1vmax);
+}
+
+.cardDetailHeading{
+  font-family: "Days One", sans-serif;
+}
+
+#bookingContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  min-height: 50vh;
+  /* background-color: #008aff; */
+}
+
+@media screen and (max-width: 768px) {
+  #searchHead {
+    padding: 30px;
+  }
+  #searchResults h3 {
+    font-size: 80%;
+  }
+  #filterHead {
+    font-size: 55%;
+  }
+  .ques {
+    font-size: 110%;
+  }
+  .ans {
+    font-size: 110%;
+  }
+  .userName {
+    font-size: 1.2rem;
+  }
+  .profession {
+    font-size: 1rem;
+  }
+}
